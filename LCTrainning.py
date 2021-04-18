@@ -99,7 +99,7 @@ for i in range(len(metadata)):
     class_spec = class_data.findtext('Species')
     class_id = class_data.findtext('ClassId')
     class_content = class_data.findtext('Content')
-    if class_content == 'Flower':      #LeafScan - Fruit - Flower - Entire - Leaf - Stem - Branch
+    if class_content == 'LeafScan':      #LeafScan - Fruit - Flower - Entire - Leaf - Stem - Branch
         #print(class_content)
         leafscans.append(metadata[i])
         leafscansfiles.append(filenames[i])
@@ -188,7 +188,7 @@ for i in range(len(leafscans)):
 
 # Saving the extracted features (handcrafted) in a csv file
 df = pd.DataFrame(X)
-df.to_csv('/Users/tecnicaicp/Documents/PlantCLEF2015/X.csv', header=False, index=False)
+df.to_csv('/Users/tecnicaicp/Documents/PlantCLEF2015/Xtest.csv', header=False, index=False)
 
 # Saving the extracted features (deep) in a csv file
 #df = pd.DataFrame(X_deep)
@@ -196,5 +196,5 @@ df.to_csv('/Users/tecnicaicp/Documents/PlantCLEF2015/X.csv', header=False, index
 
 # Saving the classes in a csv file
 df_class = pd.DataFrame(y)
-df_class.to_csv('/Users/tecnicaicp/Documents/PlantCLEF2015/y.csv', header=False, index=False)
+df_class.to_csv('/Users/tecnicaicp/Documents/PlantCLEF2015/ytest.csv', header=False, index=False)
 
